@@ -27,7 +27,7 @@ class Api::V1::WorkoutsController < ApplicationController
     private 
 
     def workout_params 
-        params.require(:workout).permit(:name, :description)
+        params.require(:workout).permit(:name, :duration)
     end 
 
 end
