@@ -16,7 +16,7 @@ class Api::V1::ExercisesController < ApplicationController
     def create
         @exercise = @workout.exercises.new(exercise_params)
         @exercise.save 
-        render json: @exercise_params
+        render json: @exercise
     end 
 
     def destroy 
