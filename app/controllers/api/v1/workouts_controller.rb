@@ -19,6 +19,15 @@ class Api::V1::WorkoutsController < ApplicationController
         render json: @workout 
     end 
 
+    def update 
+        @workout = Workout.find(params[:id])
+        if @workout.update(workout_params)
+            render json: @workout
+        else 
+            render json: {error: 'Error Updating workout'}
+        end 
+    end 
+
     def destroy 
         @workout = Workout.find(params[:id])
         @workout.destroy 
