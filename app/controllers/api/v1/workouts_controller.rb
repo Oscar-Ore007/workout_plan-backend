@@ -24,7 +24,7 @@ class Api::V1::WorkoutsController < ApplicationController
         if @workout.update(workout_params)
             render json: @workout
         else 
-            render json: {error: 'Error Updating workout'}
+            render json: {error: 'Error updating workout'}
         end 
     end 
 
@@ -36,7 +36,7 @@ class Api::V1::WorkoutsController < ApplicationController
     private 
 
     def workout_params 
-        params.require(:workout).permit(:name, :duration)
+        params.require(:workout).permit(:id, :name, :duration)
     end 
 
 end
